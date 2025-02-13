@@ -16,9 +16,9 @@ public class main {
         while (opcao !=4) {
             
                     System.out.println("=== MENU DAS CANETAS ===");
-                    System.out.println("1- CANETA ESFEROGRÁFICA");
-                    System.out.println("2- CANETA GEL");
-                    System.out.println("3- CANETA TINTEIRO");
+                    System.out.println("1- MOCHILA ESCOLAR");
+                    System.out.println("2- MOCHILA DE VIAGEM");
+                    System.out.println("3- MOCHILA ESPORTIVA");
                     System.out.println("4- PARA SAIR DO PROGRAMA!");
             
                     System.out.print("\nDigite a opção desejada: ");
@@ -27,15 +27,15 @@ public class main {
 
                     switch (opcao) {
                         case 1:
-                            System.out.println("Caneta Esferográfica: Econômica e de longa duração ");
+                            System.out.println("Mochila Escolar: Compacta e ideal para estudantes ");
                             break;
                     
                         case 2:
-                            System.out.println("Caneta Gel: Tinta mais pigmentada e escrita suave ");
+                            System.out.println("Mochila de Viagem: Espaçosa, ideal para longas jornadas ");
                             break;
             
                         case 3: 
-                            System.out.println("Caneta Tinteiro: Econômica e de longa duração ");
+                            System.out.println("Mochila Esportiva: Leve, resistente e ergonômica ");
                             break;
             
                         case 4:
