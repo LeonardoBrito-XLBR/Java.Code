@@ -1,0 +1,87 @@
+Crie um programa em Java que gerencie um conjunto de números utilizando um array de tamanho fixo. O programa deve apresentar um menu interativo com as seguintes opções:
+
+-Inserir número: O usuário poderá adicionar um número ao array, desde que ainda haja espaço disponível. Caso o array esteja cheio, o programa deve exibir uma mensagem informando que a inserção não é possível.  
+
+-Listar números: Exibir todos os números armazenados no array, junto com seus respectivos índices. Caso o array esteja vazio, informar que não há números cadastrados.
+
+-Remover número: O usuário informará um índice e o programa removerá o número correspondente. Os números subsequentes devem ser deslocados para preencher o espaço deixado pelo número removido. Se o índice informado for inválido ou o array estiver vazio, uma mensagem de erro deve ser exibida.
+
+-Sair: Finalizar o programa.
+
+
+
+import java.util.Scanner;
+public class MenuComArray {
+   
+
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int tamanho = 5; // Defina o tamanho fixo do array
+        int[] numeros = new int[tamanho];
+        int quantidade = 0; // Quantidade real de elementos no array
+
+        while (true) {
+            System.out.println("\n=== MENU ===");
+            System.out.println("1 - Inserir número");
+            System.out.println("2 - Listar números");
+            System.out.println("3 - Remover número");
+            System.out.println("4 - Sair");
+            System.out.print("Escolha uma opção: ");
+            int opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    if (quantidade < tamanho) {
+                        System.out.print("Digite um número para adicionar: ");
+                        numeros[quantidade] = scanner.nextInt();
+                        quantidade++;
+                        System.out.println("Número adicionado com sucesso!");
+                    } else {
+                        System.out.println("O array está cheio! Não é possível adicionar mais números.");
+                    }
+                    break;
+
+                case 2:
+                    if (quantidade == 0) {
+                        System.out.println("O array está vazio.");
+                    } else {
+                        System.out.println("Números armazenados:");
+                        for (int i = 0; i < quantidade; i++) {
+                            System.out.println("[" + i + "] " + numeros[i]);
+                        }
+                    }
+                    break;
+
+                case 3:
+                    if (quantidade == 0) {
+                        System.out.println("O array está vazio. Nada para remover.");
+                    } else {
+                        System.out.print("Digite o índice do número a ser removido (0 a " + (quantidade - 1) + "): ");
+                        int indice = scanner.nextInt();
+
+                        if (indice >= 0 && indice < quantidade) {
+                            for (int i = indice; i < quantidade - 1; i++) {
+                                numeros[i] = numeros[i + 1];
+                            }
+                            quantidade--;
+                            System.out.println("Número removido com sucesso!");
+                        } else {
+                            System.out.println("Índice inválido!");
+                        }
+                    }
+                    break;
+
+                case 4:
+                    System.out.println("Saindo do programa...");
+                    scanner.close();
+                    return;
+
+                default:
+                    System.out.println("Opção inválida! Tente novamente.");
+            }
+        }
+    }
+}
+
+
