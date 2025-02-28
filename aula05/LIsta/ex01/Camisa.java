@@ -1,4 +1,4 @@
-package LIsta.ex01;
+
 /*  1-Desenvolva a solução utilizando os conceitos de orientação a objetos e encapsulamento, sabendo que a classe Camisa deve conter os atributos:  -Cor  -Tamanho -tipo */
 
 

@@ -2,7 +2,6 @@ package ex01;
 
 import java.util.Scanner;
 
-import javax.swing.text.Style;
 
 public class main {
 

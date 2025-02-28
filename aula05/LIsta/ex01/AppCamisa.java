@@ -1,4 +1,4 @@
-package LIsta.ex01;
+
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -14,34 +14,51 @@ public class AppCamisa {
     
 
         while (true) {
-
             // EXIBINDO MENU DE COMANDOS 
             menuComandos();
             
             System.out.print("Digite a sua opção: ");
             int opcao = scan.nextInt();
+            scan.nextLine();
 
             switch (opcao) {
                 case 1:
 
-                    System.out.println("DIGITE A COR DA CAMISA: ");
+                    System.out.print("DIGITE A COR DA CAMISA: ");
                     String corUsu = scan.nextLine();
 
-                    System.out.println("DIGITE A TAMANHO DA CAMISA: ");
+                    System.out.print("DIGITE A TAMANHO DA CAMISA: ");
                     int tamanhoUsu = scan.nextInt();
+                    scan.nextLine();
 
-                    System.out.println("DIGITE O TIPO DA CAMISA: ");
+                    System.out.print("DIGITE O TIPO DA CAMISA: ");
                     String tipoUsu = scan.nextLine();
-                
+
                     roupas.add(new Camisa(corUsu, tamanhoUsu, tipoUsu));
+                    System.out.println("Camisas cadastradas com sucesso!");
                     break;
             
                 case 2:
 
-                break
+                    //IMPRIENDO TODAS AS CAMISAS 
+                    for (Camisa camisa : roupas) {
+                        System.out.println("CAMISA DE COR: "+ camisa.getCor() + " - " + "CAMISA DE TAMANHO: " + camisa.getTamanho() + " - "+ "CAMISA DE TIPO: "+camisa.getTipo());
+                    }
+                    break;
+
+                case 5:
+                    System.out.println("SAINDO DO PROGRAMA... OBRIGADO PELO TEST");
+                    return;
+
                 default:
+                    System.out.println("OPCAO INVALIDA - REVEJA O MENU");
                     break;
             }
+
+            // if (opcao == 5){
+            //     break;
+            // }
+         
         }
     
 
@@ -64,7 +81,7 @@ public class AppCamisa {
         //SOLICITANDO CADA NOVO ITEM PARA USUAURIO
 
 
-        scan.close();
+        
     }
 
 
