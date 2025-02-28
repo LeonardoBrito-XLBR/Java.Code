@@ -41,10 +41,20 @@ public class AppCamisa {
                 case 2:
 
                     //IMPRIENDO TODAS AS CAMISAS 
+                    int i = 0;
                     for (Camisa camisa : roupas) {
-                        System.out.println("CAMISA DE COR: "+ camisa.getCor() + " - " + "CAMISA DE TAMANHO: " + camisa.getTamanho() + " - "+ "CAMISA DE TIPO: "+camisa.getTipo());
+
+                        System.out.println("[" +(i++) +"] CAMISA DE COR: "+ camisa.getCor() + " - " + "CAMISA DE TAMANHO: " + camisa.getTamanho() + " - "+ "CAMISA DE TIPO: "+camisa.getTipo());
+                    
                     }
                     break;
+
+                case 4:
+                    System.out.print("DIGITE A POSICAO DA CAMISA A SER ALTERADA (0-inicio): ");
+                    int posicaoRemover = scan.nextInt();
+                    roupas.remove(posicaoRemover);
+                    break;
+
 
                 case 5:
                     System.out.println("SAINDO DO PROGRAMA... OBRIGADO PELO TEST");
@@ -54,11 +64,6 @@ public class AppCamisa {
                     System.out.println("OPCAO INVALIDA - REVEJA O MENU");
                     break;
             }
-
-            // if (opcao == 5){
-            //     break;
-            // }
-         
         }
     
 
@@ -77,11 +82,6 @@ public class AppCamisa {
         // System.out.println(roupa.getCor());
         // System.out.println(roupa.getTamanho());
         // System.out.println(roupa.getTipo());
-
-        //SOLICITANDO CADA NOVO ITEM PARA USUAURIO
-
-
-        
     }
 
 
