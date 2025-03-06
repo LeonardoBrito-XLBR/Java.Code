@@ -22,8 +22,9 @@ public class AppCamisa {
             scan.nextLine();
 
             switch (opcao) {
-                case 1:
 
+                case 1: 
+                    //SOLICITANDO DADOS PARA USUARIO
                     System.out.print("DIGITE A COR DA CAMISA: ");
                     String corUsu = scan.nextLine();
 
@@ -34,29 +35,49 @@ public class AppCamisa {
                     System.out.print("DIGITE O TIPO DA CAMISA: ");
                     String tipoUsu = scan.nextLine();
 
+
+                    //ADICIONADO UM OBJETO DIRETAMENTE NO ARRAY 
                     roupas.add(new Camisa(corUsu, tamanhoUsu, tipoUsu));
                     System.out.println("Camisas cadastradas com sucesso!");
                     break;
+
             
                 case 2:
-
-                    //IMPRIENDO TODAS AS CAMISAS 
                     int i = 0;
-                    for (Camisa camisa : roupas) {
 
+                    //IMPRIMINDO TODAS AS CAMISAS 
+                    for (Camisa camisa : roupas) {
                         System.out.println("[" +(i++) +"] CAMISA DE COR: "+ camisa.getCor() + " - " + "CAMISA DE TAMANHO: " + camisa.getTamanho() + " - "+ "CAMISA DE TIPO: "+camisa.getTipo());
-                    
                     }
                     break;
 
+                
+
+
+
                 case 4:
-                    System.out.print("DIGITE A POSICAO DA CAMISA A SER ALTERADA (0-inicio): ");
+                    
+                    //REMOVENDO CAMISAS DE ACORDO COM A POSIÇÃO NO ARRAY
+                
+                    if (roupas.size() == 0){
+                        System.out.println("GUARDA-ROUPA ESTA VAZIO! PRIMEIRO CADASTRE UMA PEÇA PARA EXCLUIR");
+                        break;
+                    }
+                    
+                    System.out.println("SUGERIMOS QUE VC VERIFIQUE ANTES DE APAGAR UM ITEM NA LISTA, CERTO?");
+                    System.out.print("DIGITE A POSICAO DA CAMISA A SER ALTERADA (0- "+(roupas.size()-1)+"): ");
                     int posicaoRemover = scan.nextInt();
                     roupas.remove(posicaoRemover);
+                        
+                    
+                
+
+                    System.out.println("CAMISA REMOVIDA COM SUCESSO! ");
                     break;
 
 
                 case 5:
+                    //ENCERRANDO O PROGRAMA...
                     System.out.println("SAINDO DO PROGRAMA... OBRIGADO PELO TEST");
                     return;
 
