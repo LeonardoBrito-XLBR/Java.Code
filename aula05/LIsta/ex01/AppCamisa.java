@@ -18,12 +18,11 @@ public class AppCamisa {
             menuComandos();
             
             System.out.print("Digite a sua opção: ");
-            int opcao = scan.nextInt();
-            scan.nextLine();
+            String opcao = scan.nextLine();
 
             switch (opcao) {
 
-                case 1: 
+                case "1": 
                     //SOLICITANDO DADOS PARA USUARIO
                     System.out.print("DIGITE A COR DA CAMISA: ");
                     String corUsu = scan.nextLine();
@@ -42,16 +41,22 @@ public class AppCamisa {
                     break;
 
             
-                case 2:
+                case "2":
                     int i = 0;
 
+
+                    if (roupas.size() == 0){
+                        System.out.println("GUARDA-ROUPA ESTA VAZIO! PRIMEIRO CADASTRE UMA PEÇA PARA EXCLUIR");
+                        break;
+                    }
+                    
                     //IMPRIMINDO TODAS AS CAMISAS 
                     for (Camisa camisa : roupas) {
                         System.out.println("[" +(i++) +"] CAMISA DE COR: "+ camisa.getCor() + " - " + "CAMISA DE TAMANHO: " + camisa.getTamanho() + " - "+ "CAMISA DE TIPO: "+camisa.getTipo());
                     }
                     break;
 
-                case 3:
+                case "3":
                     //SOLICITANDO A POSICAO DA CAMISA NO ARRAY QUE O USU DESEJA MUDAR
                     System.out.print("DIGITE A POSCICAO DA CAMISA QUE VC QUER ALTERAR: ");
                     int posicaoIndex = scan.nextInt();
@@ -97,7 +102,7 @@ public class AppCamisa {
 
 
 
-                case 4:
+                case "4":
                     
                     //REMOVENDO CAMISAS DE ACORDO COM A POSIÇÃO NO ARRAY
                 
@@ -118,7 +123,7 @@ public class AppCamisa {
                     break;
 
 
-                case 5:
+                case "5":
                     //ENCERRANDO O PROGRAMA...
                     System.out.println("SAINDO DO PROGRAMA... OBRIGADO PELO TEST");
                     return;
