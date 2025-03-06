@@ -51,7 +51,49 @@ public class AppCamisa {
                     }
                     break;
 
+                case 3:
+                    //SOLICITANDO A POSICAO DA CAMISA NO ARRAY QUE O USU DESEJA MUDAR
+                    System.out.print("DIGITE A POSCICAO DA CAMISA QUE VC QUER ALTERAR: ");
+                    int posicaoIndex = scan.nextInt();
+                    scan.nextLine();
+                    
+                    //TRAZENDO EM UMA VARIAVEL O OBJETO NO ARRAY 
+                    Camisa camisa = roupas.get(posicaoIndex);
+
+
+                    // === ALTERAÇÃO NA COR DAS CAMISAS  ===
+                    System.out.println("A CAMISA SELECIONADA POSSUI ESSA COR: "+camisa.getCor());
+                    System.out.print("DIGITE A NOVA COR (OU PRESSIONE ENTER PARA PULAR): ");
+                    String novaCor = scan.nextLine();
+
+                    //VERIFICANDO SE VALOR DA CAMISA FOI DIGITADO - ALTERANDO O VALOR
+                    if (!novaCor.isEmpty()) camisa.setCor(novaCor);
+                    
+
                 
+            
+                    System.out.println("A CAMISA SELECIONADA POSSUI ESSE TAMANHO: "+camisa.getTamanho());
+                    System.out.print("DIGITE O NOVO TAMANHO (OU PRESSIONE ENTER PARA PULAR): ");
+                    String novaTamanhoStr = scan.nextLine();
+
+            
+                        // ======== RESOLVER ESSA TIPAGEM VIU ========
+                    if (!novaTamanhoStr.isEmpty()){
+                        int novoTamanho = Integer.parseInt(novaTamanhoStr);
+                        camisa.setTamanho(novoTamanho);
+                    } 
+                    
+                        
+
+            
+                    System.out.println("A CAMISA SELECIONADA TEM ESSE TIPO: "+camisa.getTipo());
+                    System.out.print("DIGITE O NOVO TIPO (OU PRESSIONE ENTER PARA PULAR): ");
+                    String novoTipo = scan.nextLine();
+
+            
+                    if (!novoTipo.isEmpty()) camisa.setTipo(novoTipo);
+                    
+                    break;
 
 
 
