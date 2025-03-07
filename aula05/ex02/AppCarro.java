@@ -12,10 +12,13 @@ public class AppCarro {
         while (true){
             menuComando();
             System.out.print("DIGITE A SUA OPCAO: ");
-            String opcao = scan.next();
+            String opcaoStr = scan.next();
+            int opcao = Integer.parseInt(opcaoStr);
+
+
 
             switch (opcao) {
-                case "1":
+                case 1:
 
 
                     /*  CODIGO PRINCIPAL 
@@ -52,7 +55,7 @@ public class AppCarro {
                 break;
                 
 
-                case "2":
+                case 2:
                     int i = 0;
 
                     if (conjCarros.isEmpty() == true){
@@ -65,14 +68,79 @@ public class AppCarro {
                     }
 
                     break;
-                default:
+
+                    case 3:
+                        System.out.print("DIGITE QUAL CARRO VC QUER ALTERAR (ÍNDICE): ");
+                        int posicaoIndex = scan.nextInt();
+                        scan.nextLine(); // Consome a quebra de linha pendente
                     
+                        // Verifica se o índice existe na lista
+                        if (posicaoIndex < 0 || posicaoIndex >= conjCarros.size()) {
+                            System.out.println("ÍNDICE INVÁLIDO!");
+                            break;
+                        }
+                    
+                        Carro carro = conjCarros.get(posicaoIndex);
+                    
+                        // ALTERAÇÃO DA MARCA
+                        System.out.println("O CARRO POSSUI ESSA MARCA: " + carro.getMarca());
+                        System.out.print("DIGITE A NOVA MARCA DO CARRO (PRESSIONE ENTER PARA PULAR):    ");
+                        String novaMarca = scan.nextLine();
+                        if (!novaMarca.isEmpty()) carro.setMarca(novaMarca);
+                    
+                        // ALTERAÇÃO DO MODELO
+                        System.out.println("O CARRO POSSUI ESSE MODELO: " + carro.getModelo());
+                        System.out.print("DIGITE O NOVO MODELO DO CARRO (PRESSIONE ENTER PARA PULAR):   ");
+                        String novoModelo = scan.nextLine();
+                        
+                        if (!novoModelo.isEmpty()) carro.setModelo(novoModelo);
+                    
+                        // ALTERAÇÃO DO ANO DE FABRICAÇÃO
+                        System.out.println("O CARRO POSSUI ESSE ANO DE FABRICAÇÃO: " + carro.getAno());
+                        System.out.print("DIGITE O NOVO ANO DO CARRO (PRESSIONE ENTER PARA PULAR): ");
+                        String entradaAno = scan.nextLine(); // Lendo como String para permitir ENTER   sem erro
+                        if (!entradaAno.isEmpty()) {
+                        try {
+                            int novoAno = Integer.parseInt(entradaAno);
+                            carro.setAno(novoAno);
+                        } catch (NumberFormatException e) {
+                            System.out.println("Entrada inválida para o ano! Mantendo o valor original.");
+                        }
+                    }
+                    
+                    System.out.println("\nCARRO ATUALIZADO COM SUCESSO!");
+                    break;
+                
+
+                case 4:
+                    System.out.println("AVISO, OLHE A LISTA ANTES DE QUALQUER EXCLUSAO");
+                    System.out.print("DIGITE QUAL CARRO VC QUER EXCLUIR (INDEX): ");
+
+                    
+                    int indexRemover = scan.nextInt();
+
+                    if (indexRemover < 0 || indexRemover >= conjCarros.size()) {
+                        System.out.println("ÍNDICE INVÁLIDO!");
+                        break;
+                    }
+                    conjCarros.remove(indexRemover);
+
+                    System.out.println("CARRO REMOVIDO COM SUCESSO!");
+                    break;
+
+                case 5:
+                    System.out.println("Saindo do programa! OBRIGADO");
+                    return;
+                    
+
+                default:
+                    System.out.println("OPCAO INVALIDA DO SISTEMA");
                     break;
             }
 
+            
         }
         // Carro veiculo = new Carro("FIAT", "OFF-ROAD", 2025);
-        
     }
 
     public static void menuComando(){
