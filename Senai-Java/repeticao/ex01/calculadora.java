@@ -1,7 +1,4 @@
-import java.text.BreakIterator;
 import java.util.Scanner;
-
-import org.w3c.dom.views.DocumentView;
 
 public class calculadora {
     public static void main(String[] args) {

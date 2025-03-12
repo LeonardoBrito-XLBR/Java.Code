@@ -152,10 +152,5 @@ public class AppCarro {
         System.out.println("4- EXCLUIR OS CARROS DA GARAGEM");
         System.out.println("5- SAIR DO PROGRAMA");
         System.out.println();
-
-    }
-
-
-    
+    } 
 }
-

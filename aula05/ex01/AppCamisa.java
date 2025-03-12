@@ -165,6 +165,4 @@ public class AppCamisa {
         System.out.println("5- ENCERRAR O PROGRAMA");
         System.out.println();
     }
-
-
 }
