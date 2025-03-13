@@ -13,7 +13,20 @@ public class Animal {
     }
 
 
-    // public void exbirSom(){
-    //     // System.out.println("SOM DE ANIMAL");
+    public void exibirSom(){
+    System.out.println("SOM DE ANIMAL");
+    
+    }
+
+
+    public void exibirDados(){
+        
+    }
+
+
+    @Override
+    public String toString() {
+        return "Animal [nome=" + nome + ", quantPatas=" + quantPatas + "]";
+    }
     
 }
