@@ -1,0 +1,26 @@
+Crie um programa que permita ao usuário gerenciar um cadastro de livros, com as opções de:
+
+Adicionar um novo livro ao sistema.
+Listar todos os livros cadastrados.
+Alterar as informações de um livro existente.
+Remover um livro do sistema.
+
+
+ Crie uma classe Livro com os seguintes atributos:
+titulo (String)
+autor (String)
+anoPublicacao (int)
+preco (double)
+
+
+E os métodos:
+
+Getters e Setters (encapsulamento).
+Método exibirInformacoes() que exibe as informações do livro.
+
+No método main, implemente um menu com as seguintes opções:
+Cria um novo livro e adiciona à lista.
+Exibe todos os livros cadastrados.
+Permite alterar o título, autor, ano e preço de um livro específico.
+Remove um livro da lista pelo título.
+Encerra o programa.
