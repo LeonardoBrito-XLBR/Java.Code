@@ -1,0 +1,16 @@
+Nesta atividade, você irá desenvolver um programa em Java que simula a interação com carros. O programa utilizará conceitos de herança, encapsulamento, polimorfismo e a interface gráfica JOptionPane para interação com o usuário.
+
+O programa deverá ter as seguintes funcionalidades:
+
+Cadastrar Carro: O usuário poderá cadastrar um novo carro informando sua marca, modelo e ano de fabricação. Os carros cadastrados serão armazenados em um array.
+
+Listar Carros: O usuário poderá visualizar todos os carros cadastrados até o momento.
+
+Detalhar Carro: O usuário poderá selecionar um carro cadastrado e visualizar seus detalhes, como marca, modelo e ano de fabricação.
+
+Sair: Encerra a execução do programa
+
+
+--- LINK DA AULA ---
+https://youtu.be/ci5bHzoVvaQ?si=LWKBDjTdJRj053s-
+--- --- --- --- --- --- ---

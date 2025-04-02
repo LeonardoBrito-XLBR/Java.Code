@@ -1,0 +1,18 @@
+Desenvolver um programa simples em Java para cadastrar nomes de pessoas e suas idades em um arquivo de texto, e depois ler essas informações.
+
+Requisitos:
+Permitir cadastrar nome e idade
+Salvar os dados em um arquivo de texto
+Ler e exibir todos os dados do arquivo
+Utilizar tratamento básico de exceções
+
+Menu Simples: Apresenta 3 opções básicas (cadastrar, listar e sair)
+
+Cadastro de Pessoas:
+
+Solicita nome e idade
+Salva os dados em um arquivo de texto no formato "nome,idade"
+Listagem de Pessoas:
+
+Lê o arquivo linha por linha
+Exibe os dados das pessoas cadastradas em formato de tabela simples
